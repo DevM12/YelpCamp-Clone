@@ -1,0 +1,34 @@
+<% layout('../layouts/boilerplate') %>
+    <h1 class="text-center">New Campground!</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Enter the title</label>
+                <input type="text" class="form-control" name="campground[title]" id="title" autofocus required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Enter the location</label>
+                <input type="text" class="form-control" name="campground[location]" id="location" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Enter the rental price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" name="campground[price]"
+                        aria-label="price" aria-describedby="basic-addon1" required>
+                </div>
+            </div>
+            <div class="input-group mb-3 custom-file">
+                <label class="input-group-text custom-file-label" for="image">Upload</label>
+                <input type="file" class="form-control" id="image" name="image" multiple>
+
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Enter the description</label>
+                <textarea type="text" class="form-control" name="campground[description]" id="description" requi
+                    red></textarea>
+            </div>
+            <button class="btn btn-secondary">Add Campground</button>
+        </form>
+        <a href="/campgrounds">All Campgrounds</a>
+    </div>

@@ -1,0 +1,41 @@
+<% layout('../layouts/boilerplate') %>
+    <div class="container d-flex justify-content-center allign-items-center mt-5">
+        <div class="row flex-fill">
+            <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+                <div class="card shadow">
+                    <img src="https://images.unsplash.com/photo-1478033394151-c931d5a4bdd6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHw0ODQzNTF8fHx8fHx8MTcxMTEzOTQxMA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
+                        alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h1 class="card-title">Register</h1>
+                        <form action="/register" method="POST" class="validated-form" novalidate>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="useranme" name="username" autofocus
+                                    required>
+                                <div class="validate-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
+                                <div class="validate-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                                <div class="validate-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
