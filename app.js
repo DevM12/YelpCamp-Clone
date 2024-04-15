@@ -177,6 +177,9 @@ app.use('/', userRoutes)
 
 
 //CAMPGROUND SECTION
+app.get('/homepage', (req, res) => {
+    res.render('campgrounds/home.ejs')
+});
 const campgroundRoutes = require('./routes/campgrounds.js');
 app.use('/campgrounds', campgroundRoutes)
 
