@@ -19,7 +19,7 @@ const passport = require('passport');
 const localStrategy = require('passport-local');
 const mongoSanitize = require('express-mongo-sanitize');
 
-const MongoDBStore=require('connect-mongo')(session);
+const MongoDBStore = require('connect-mongo')(session);
 
 const helmet = require('helmet');
 
@@ -70,16 +70,16 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.join(__dirname, 'public')))
 
 
-const secret = process.env.CLOUDINARY_SECRET0||'This is a secret';
+const secret = process.env.CLOUDINARY_SECRET0 || 'This is a secret';
 
 const store = new MongoDBStore({
-    url:dbUrl,
+    url: dbUrl,
     secret,
-    touchAfter: 24*60*60
+    touchAfter: 24 * 60 * 60
 });
 
-store.on("error",function(e){
-    console.log("session Store Error",e)
+store.on("error", function (e) {
+    console.log("session Store Error", e)
 })
 
 
@@ -146,7 +146,7 @@ app.use(
         },
     }),
     helmet.crossOriginEmbedderPolicy({
-        policy:"credentialless"
+        policy: "credentialless"
     })
 );
 
@@ -178,10 +178,11 @@ app.use('/', userRoutes)
 
 //CAMPGROUND SECTION
 app.get('/', (req, res) => {
-        res.render('campgrounds/home.ejs')
-    });
+    res.render('campgrounds/home.ejs')
+});
 const campgroundRoutes = require('./routes/campgrounds.js');
 app.use('/campgrounds', campgroundRoutes)
+
 
 
 //REVIEW SECTION
