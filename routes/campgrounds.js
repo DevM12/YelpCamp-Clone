@@ -10,9 +10,7 @@ const upload = multer({ storage });
 
 
 
-router.get('/homepage', (req, res) => {
-    res.render('campgrounds/home.ejs')
-});
+
 
 router.route('/')
     .get(catchAsync(campground.index))

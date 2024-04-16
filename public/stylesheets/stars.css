@@ -203,3 +203,39 @@ screen and (min-resolution: 192dpi) {
   -webkit-transition: background-position .7s;
   transition: background-position .7s;
 }
+
+
+
+
+
+
+
+
+
+
+.card{
+  background-color: #212529;
+  color:white;
+}
+
+
+.submitbtn {
+  color: #000;
+  border-color: #84FF65;
+  transition: all 0.2s;
+
+}
+
+.submitbtn:hover {
+  border-color: #84FF65;
+  color: green;
+  background-color: green;
+  box-shadow: 0 0.2em 0.2em -0.1em white;
+  transform: translateY(-0.5em);
+  cursor: pointer;
+}
+
+.deletebtn:hover{
+  background-color: red;
+}
+

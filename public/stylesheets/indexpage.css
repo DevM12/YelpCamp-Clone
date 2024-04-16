@@ -1,0 +1,8 @@
+.cutoff-text{
+    --max-lines:2;
+    display:-webkit-box;
+    overflow: hidden;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+

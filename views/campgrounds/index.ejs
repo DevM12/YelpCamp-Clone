@@ -1,12 +1,15 @@
 <% layout('../layouts/boilerplate') %>
-    <div id="cluster-map"></div>
-    <h1>All Campgrounds</h1>
+<link rel="stylesheet" href="/stylesheets/indexpage.css">
+    <div id="cluster-map" class="mb-4"></div>
+    <div class="mx-auto p-2 fs-1 text-white" style="width: 200px;">
+        CAMPGROUNDS!!
+    </div>
     <% for(let campground of campgrounds){ %>
-        <div class="card mb-3">
+        <div class="card bg-dark text-white mb-3 ">
             <div class="row">
                 <div class="col-md-4">
                     <% if(campground.image.length){ %>
-                        <img crossorigin="anonymous" src="<%= campground.image[0].url %>" alt="" class="img-fluid">
+                        <img crossorigin="anonymous" src="<%= campground.image[0].url %>" alt="" class="img-fluid rounded mx-auto d-block" style="width:600px;">
                         <% }else{ %>
                             <img crossorigin="anonymous" src="" alt="" class="img-fluid">
                             <% } %>
@@ -18,15 +21,19 @@
                             <%= campground.title %>
                         </h5>
 
-                        <p class="card-text">
-                            <small class="text-secondary-emphasis">
-                                <%= campground.location %>
-                            </small>
-                        </p>
-                        <h6 class="card-text text-dark">
+                        <a href="https://www.google.com/maps/place/<%= campground.location %>">
+                            <%= campground.location %>
+                        </a>
+                        <!-- icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411" />
+                        </svg>
+                        <p class="card-text text-light  cutoff-text mt-3" id="description">
                             <%= campground.description %>
-                        </h6>
-                        <a href=" /campgrounds/<%= campground._id %>" class="btn btn-secondary">View campground</a>
+                        </p>
+                        <a href=" /campgrounds/<%= campground._id %>" class="btn btn-secondary mt-4">View campground</a>
                     </div>
                 </div>
             </div>

@@ -1,36 +1,67 @@
 body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+        url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
     background-size: cover;
-    background-position: center;
+        background-position: center;
     text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
 }
+
 .cover-container {
-  max-width: 60vw;
+    max-width: 60vw;
 }
 
 .nav-link {
     padding: 0.25rem 0;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     margin-left: 1rem;
     border-bottom: 0.25rem solid transparent;
 }
 
-.nav-link:hover{
-    color: rgba(255,255,255,0.5);
-    border-bottom-color:rgba(255,255,255,0.5);
+.header {
+    text-align: center;
+    text-decoration: dashed;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
 .nav-link.active {
     color: white;
-    border-bottom-color:white;
+    border-bottom-color: white;
 
 }
 
-.btn-secondary, .btn-secondary:hover{
+h3 {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.LOGO {
+}
+
+.lead {
+    font-size: medium;
+}
+
+.btn {
+    color: #000;
+    border-color: #333;
+    transition: all 0.2s;
+
+}
+
+.btn:hover {
+    border-color: white;
     color: #333;
-    text-shadow: none;
+    background-color: #333;
+    box-shadow: 0 0.2em 0.2em -0.1em white;
+    transform: translateY(-0.5em);
+    cursor: pointer;
 }

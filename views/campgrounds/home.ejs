@@ -15,9 +15,9 @@
 <body class="d-flex text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
-            <div>
-                <h3 class="float-md-left mb-0">Yelp Camp</h3>
-                <nav class="nav nav-masthead justify-content-center float-md-right">
+            <div class="header">
+                
+                <nav class="nav nav-masthead justify-content-center float-md-right fs-4">
                     <a href="#" class="nav-link active">Home</a>
                     <a href="/campgrounds" class="nav-link">Campgrounds</a>
                     <% if(!currentUser){ %>
@@ -30,10 +30,10 @@
             </div>
         </header>
         <main class="px-3">
-            <h1>YELP CAMP</h1>
+            <button class="btn btn-dark-emphasis" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" disabled>YELP CAMP</button>
             <p class="lead">Welcome to YelpCamp! <br> Jump right in and explore our many campgrounds. <br>
                 Feel free to share some of your own and comment on others!</p>
-            <a href="/campgrounds" class="btn btn-lg btn-secondary font-weight-bold text-white">CAMPGROUNDS</a>
+            <a href="/campgrounds" class="btn btn-lg btn-secondary font-weight-bold text-white">EXPLORE CAMPGROUNDS</a>
         </main>
 
         <footer class="mt-auto text-white-50">

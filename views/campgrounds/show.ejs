@@ -2,21 +2,16 @@
     <link rel="stylesheet" href="/stylesheets/stars.css">
 
 
-    <div class="row">
-        <% if(currentUser){ %>
-            <div class="col-6">
-                <% }else{ %>
-                    <div class="mx-auto p-2" style="width: 800px;">
-                        <% } %>
-                            <div id='map'></div>
-
-
-                            <div id="carouselExample" class="carousel slide">
+    <div class="row">               
+                    <div class=" mx-auto p-2" style="width: 800px;">
+                        
+                            <div id="carouselExample" class="mt-4 carousel slide">
                                 <div class="carousel-inner">
                                     <% for(let img of campground.image){ %>
                                         <% campground.image.forEach((img,i)=>{ %>
                                             <div class="carousel-item <%= i===0 ? 'active':'' %>">
-                                                <img crossorigin="anonymous" src="<%= img.url %>" class="d-block w-100" alt="">
+                                                <img crossorigin="anonymous" src="<%= img.url %>" class="d-block w-100"
+                                                    alt="">
                                             </div>
                                             <% }) %>
                                                 <% } %>
@@ -35,24 +30,27 @@
                                     <% } %>
                             </div>
                             <div class="card mb-3">
-                                <h1 class="card-title">
+                                <h1 class="card-title fs-1 fw-bolder">
                                     <%= campground.title %>
                                 </h1>
                                 <h5 class="card-text text-secondary">
-                                    <%= campground.location %>
+                                    <a href="https://www.google.com/maps/place/<%= campground.location %>">
+                                        <%= campground.location %>
+                                    </a>
+                                    <!-- icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411" />
+                                    </svg>
                                 </h5>
 
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <%= campground.description %>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Submitted by: <%= campground.author.username %>
-                                    </li>
-                                    <li class="list-group-item">price:$<%= campground.price %>/night
-                                    </li>
-                                    <li class="list-group-item">A third item</li>
-                                </ul>
+                                <div class="card-text mt-4">
+                                    <%= campground.description %><br>
+                                        Submitted by: <%= campground.author.username %><br>
+                                            Price:<%= campground.price %>/night
+
+                                </div>
 
                                 <% if(currentUser&&campground.author.equals(currentUser)){ %>
                                     <div class="card-body text-center">
@@ -64,18 +62,18 @@
                                         <button class="btn btn-secondary">Delete Campground</button>
                                     </form>
                                     <% } %>
-                                        <div class="card-footer text-body-secondary">
+                                        <div class="card-footer text-light">
                                             2 days ago
                                         </div>
                             </div>
                     </div>
                     <% if(currentUser){%>
-                        <div class="col-6">
-                            <h2>Leave a review</h2>
+                        <div class="mx-auto p-2" style="width: 800px;">
+                            <h1 class="text-light fw-bold">Review Campground</h1>
                             <form action="/campgrounds/<%= campground._id %>/review" method="POST"
                                 class="mb-3 validated-form" novalidate>
                                 <div class="mb-3">
-                                    <label for="rating" class="form-label">Rating</label>
+                                    <label for="rating" class="form-label text-light fs-3 mt-4">Leave a Rating</label>
                                     <fieldset class="starability-slot"> <input type="radio" id="no-rate"
                                             class="input-no-rate" name="review[rating]" value="1" checked
                                             aria-label="No rating." /> <input type="radio" id="first-rate1"
@@ -90,14 +88,15 @@
                                             stars</label> <input type="radio" id="first-rate5" name="review[rating]"
                                             value="5" /> <label for="first-rate5" title="Amazing">5 stars</label>
                                     </fieldset>
-                                    <label for="body" class="form-label">Review</label>
-                                    <textarea name="review[body]" id="body" class="form-control" cols="30" rows="3"
+                                     
+                                    <label for="body" class="form-label text-light fs-3">Comment!!</label>
+                                    <textarea name="review[body]" id="body" placeholder="Leave a comment here" class="form-control description bg-dark text-light" cols="30" rows="3"
                                         required></textarea>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
-                                <button class="btn btn-success">Submit</button>
+                                <button class="submitbtn btn btn-success text-light">Submit</button>
                             </form>
                             <% } %>
                                 <% if(!currentUser){ %>
@@ -107,7 +106,7 @@
                                                 <div class="card mb-3">
                                                     <div class="card-body">
 
-                                                        <h6 class="card-subtitle mb-2 text-body-secondary">
+                                                        <h6 class="card-subtitle mb-2 text-light">
                                                             <b> Submitted By:</b>
                                                             <%= review.author.username %>
                                                         </h6>
@@ -119,7 +118,7 @@
                                                             <form
                                                                 action="/campgrounds/<%= campground._id %>/review/<%= review._id %>?_method=DELETE"
                                                                 method="POST">
-                                                                <button class="btn btn-sm btn-danger">DELETE</button>
+                                                                <button class="deletebtn btn btn-sm btn-danger">DELETE</button>
                                                             </form>
                                                             <% } %>
                                                     </div>
@@ -136,7 +135,7 @@
 
     <script>
         const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-        const campground = <%-JSON.stringify(campground) %>
+        const campground = <%- JSON.stringify(campground) %>
     </script>
 
     <script src="/javascript/showPageMap.js"></script>

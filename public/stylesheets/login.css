@@ -1,0 +1,10 @@
+body {
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fphotos%2Fhillside.html&psig=AOvVaw3AKesrEKfUJ-F5Qc2BmX65&ust=1713345716400000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCHlai0xoUDFQAAAAAdAAAAABAE");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-btn {
+    padding: 0.2rem;
+    width: 5rem;
+}   
