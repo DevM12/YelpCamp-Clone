@@ -211,11 +211,15 @@ screen and (min-resolution: 192dpi) {
 
 
 
-
+body{
+  background-image: url("https://res.cloudinary.com/dkr4ci3nw/image/upload/v1713262900/yelp/lg9ma7gvd3rm3le0fu6b.jpg");
+  background-size: cover;
+    background-position: center;
+}
 
 .card{
-  background-color: #212529;
-  color:white;
+  background-color: white;
+  color:black;
 }
 
 

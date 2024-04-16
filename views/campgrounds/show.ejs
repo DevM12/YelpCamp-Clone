@@ -3,9 +3,9 @@
 
 
     <div class="row">               
-                    <div class=" mx-auto p-2" style="width: 800px;">
+                    <div class="mx-auto p-2" style="width: 800px;">
                         
-                            <div id="carouselExample" class="mt-4 carousel slide">
+                            <div id="carouselExample" class="carousel slide">
                                 <div class="carousel-inner">
                                     <% for(let img of campground.image){ %>
                                         <% campground.image.forEach((img,i)=>{ %>
@@ -30,7 +30,7 @@
                                     <% } %>
                             </div>
                             <div class="card mb-3">
-                                <h1 class="card-title fs-1 fw-bolder">
+                                <h1 class="card-title fs-1">
                                     <%= campground.title %>
                                 </h1>
                                 <h5 class="card-text text-secondary">
@@ -69,7 +69,7 @@
                     </div>
                     <% if(currentUser){%>
                         <div class="mx-auto p-2" style="width: 800px;">
-                            <h1 class="text-light fw-bold">Review Campground</h1>
+                            <h2 class="text-light">Review Campground</h2>
                             <form action="/campgrounds/<%= campground._id %>/review" method="POST"
                                 class="mb-3 validated-form" novalidate>
                                 <div class="mb-3">
@@ -89,7 +89,7 @@
                                             value="5" /> <label for="first-rate5" title="Amazing">5 stars</label>
                                     </fieldset>
                                      
-                                    <label for="body" class="form-label text-light fs-3">Comment!!</label>
+                                    <label for="body" class="form-label text-light fs-3">Comment</label>
                                     <textarea name="review[body]" id="body" placeholder="Leave a comment here" class="form-control description bg-dark text-light" cols="30" rows="3"
                                         required></textarea>
                                     <div class="valid-feedback">

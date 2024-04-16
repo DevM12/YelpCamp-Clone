@@ -1,7 +1,8 @@
+
 body {
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fdepositphotos.com%2Fphotos%2Fhillside.html&psig=AOvVaw3AKesrEKfUJ-F5Qc2BmX65&ust=1713345716400000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCHlai0xoUDFQAAAAAdAAAAABAE");
+    background-image: url("https://images.unsplash.com/photo-1478033394151-c931d5a4bdd6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHw0ODQzNTF8fHx8fHx8MTcxMTEzOTQxMA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080");
     background-size: cover;
-    background-position: center;
+        background-position: center;
 }
 
 .login-btn {
