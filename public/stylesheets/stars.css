@@ -6,7 +6,6 @@
   font-size: 0.1em;
   color: transparent;
 }
-
 .starability-result:after {
   content: ' ';
   position: absolute;
