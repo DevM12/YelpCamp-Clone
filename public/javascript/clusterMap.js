@@ -13,8 +13,6 @@ map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
 
 
-
-
 map.on('load', () => {
     // Add a new source from our GeoJSON data and
     // set the 'cluster' option to true. GL-JS will
