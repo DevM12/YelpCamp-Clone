@@ -8,7 +8,6 @@ const review = require('../controllers/reviews.js')
 
 
 
-
 router.post('/', isLoggedIn, validateReview, catchAsync(review.createReview))
 
 
