@@ -10,7 +10,6 @@ module.exports.index = async (req, res) => {
     res.render('campgrounds/index.ejs', { campgrounds })
 }
 
-
 module.exports.newCampgroundForm = (req, res) => {
     res.render('campgrounds/new')
 }
