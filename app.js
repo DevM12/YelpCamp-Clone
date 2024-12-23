@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 //process.env.SECRET or anything
 
 
-
 const express = require("express");  //connecting express package
 const app = express();
 const path = require('path');
