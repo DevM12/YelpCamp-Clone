@@ -10,7 +10,6 @@ router.get('/register', user.renderRegister)
 
 router.post('/register', catchAsync(user.createUser));
 
-
 //login
 
 router.get('/login', user.renderLogin)
